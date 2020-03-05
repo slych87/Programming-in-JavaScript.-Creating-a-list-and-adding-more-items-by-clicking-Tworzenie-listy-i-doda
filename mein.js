@@ -7,10 +7,17 @@ const init = () => {
     document.body.appendChild(btn);
     btn.style.fontSize = "28px";
 
+    const btnReset = document.createElement("button");
+    btnReset.textContent = "Wyczyść";
+    document.body.appendChild(btnReset);
+    btnReset.style.fontSize = "28px";
+
     const ul = document.createElement("ul");
+    ul.style.listStyle = "none";
     document.body.appendChild(ul);
 
     btn.addEventListener("click", createLiElements);
+    btnReset.addEventListener("click", cleanList);
 }
 
 const createLiElements = () => {
@@ -27,4 +34,7 @@ const createLiElements = () => {
 
 }
 
+const cleanList = () => {
+    document.querySelector('ul').textContent = "";
+};
 init();
